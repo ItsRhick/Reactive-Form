@@ -1,0 +1,12 @@
+<h1>Daiz, Rhick Daniel</h1>
+<h2>WD - 301</h2>
+
+<div>
+  <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+    <input type="text" class="input-box" name="username" placeholder="Enter Username" formControlName="username">
+    <input type="email" class="input-box" name="email" placeholder="Enter Email" formControlName="email">
+    <input type="password" class="input-box" name="password" placeholder="Enter Password" formControlName="password">
+    <input type="password" class="input-box" name="confirmPassword" placeholder="Confirm Password" formControlName="confirmPassword">
+    <input type="submit" class="btn" value="Submit">
+  </form>
+</div>

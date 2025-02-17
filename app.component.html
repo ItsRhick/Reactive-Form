@@ -1,12 +1,70 @@
 <h1>Daiz, Rhick Daniel</h1>
 <h2>WD - 301</h2>
 
-<div>
+<!-- <div>
   <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
     <input type="text" class="input-box" name="username" placeholder="Enter Username" formControlName="username">
     <input type="email" class="input-box" name="email" placeholder="Enter Email" formControlName="email">
     <input type="password" class="input-box" name="password" placeholder="Enter Password" formControlName="password">
     <input type="password" class="input-box" name="confirmPassword" placeholder="Confirm Password" formControlName="confirmPassword">
     <input type="submit" class="btn" value="Submit">
+  </form>
+</div>
+
+<form [formGropup]="loginForm" (ngSubmit)="onSubmit">
+  <div>
+    <label for="email">Email</label>
+    <input type="email" class="input-box" id="email" formControlName="email">
+    <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="error">
+      Email is required and must be a valid email address.
+    </div>
+  </div>
+
+  <div>
+    <label for="password"></label>
+    <input class="input-box" type="password" id="password" formControlName="password">
+    <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error">
+      Password is required and must be at least 6 characters long.
+    </div>
+  </div>
+
+  <button class="btn" type="submit" [disabled]="loginForm.valid">Submit</button>
+</form> -->
+
+
+<h1>Daiz, Rhick Daniel</h1>
+<h2>WD - 301</h2>
+
+<div>
+  <h3>Registration Form</h3>
+  <form [formGroup]="formdata" (ngSubmit)="onSubmit()">
+    <input type="text" class="input-box" name="username" placeholder="Enter Username" formControlName="username">
+    <input type="email" class="input-box" name="email" placeholder="Enter Email" formControlName="email">
+    <input type="password" class="input-box" name="password" placeholder="Enter Password" formControlName="password">
+    <input type="password" class="input-box" name="confirmPassword" placeholder="Confirm Password" formControlName="confirmPassword">
+    <input type="submit" class="btn" value="Submit" [disabled]="formdata.invalid">
+  </form>
+</div>
+
+<div>
+  <h3>Login Form</h3>
+  <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+    <div>
+      <label for="email">Email</label>
+      <input type="email" class="input-box" id="email" formControlName="email">
+      <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="error">
+        Email is required and must be a valid email address.
+      </div>
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input class="input-box" type="password" id="password" formControlName="password">
+      <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error">
+        Password is required and must be at least 6 characters long.
+      </div>
+    </div>
+
+    <button class="btn" type="submit" [disabled]="loginForm.invalid">Submit</button>
   </form>
 </div>
